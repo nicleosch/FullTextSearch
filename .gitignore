@@ -1,0 +1,141 @@
+# C++ compiler generated files
+*.out
+*.exe
+*.app
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+*.la
+*.lai
+*.slo
+*.lo
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Fortran module files (if applicable)
+*.mod
+*.smod
+
+# Debug and Release directories
+[Dd]ebug/
+[Rr]elease/
+build/
+cmake-build-*/
+
+# IDE-specific files and folders
+
+## Visual Studio
+.vscode/
+.vscode/*
+*.code-workspace
+*.vcxproj
+*.vcxproj.user
+*.vcxproj.filters
+*.sln
+ipch/
+*.opensdf
+*.sdf
+*.cache/
+*.pdb
+*.idb
+
+## Xcode
+*.xcworkspace/
+*.xcuserstate
+*.xcodeproj/
+*.xcuserdata
+profile
+
+## CLion
+.idea/
+.idea/*
+*.iws
+*.iml
+cmake-build-*/
+
+## Eclipse
+.project
+.cproject
+.settings/
+
+## Code::Blocks
+*.layout
+*.depend
+*.depend.mk
+
+## QtCreator
+*.pro.user
+*.qbs.user
+*.pro.user.*
+*.qbs.user.*
+*.moc/
+*.qrc/
+*.autosave
+
+## Dev-C++
+*.dev
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+Testing/
+Makefile
+cmake_install.cmake
+CTestTestfile.cmake
+install_manifest.txt
+
+# Auto-generated files (for projects using autoconf/automake)
+aclocal.m4
+autom4te.cache/
+compile
+config.guess
+config.log
+config.status
+config.sub
+configure
+depcomp
+install-sh
+libtool
+ltmain.sh
+m4/
+missing
+stamp-h1
+
+# Miscellaneous
+*.DS_Store
+*.directory
+*.stackdump
+*.swp
+*.bak
+*.tmp
+*~
+
+# Logs
+*.log
+*.tlog
+
+# Coverage and profiling
+*.gcda
+*.gcno
+*.gcov
+*.prof
+
+# Archives and compressed files
+*.tar
+*.gz
+*.zip
+*.7z
+*.xz
+*.bz2
+*.tgz
+*.rar
+*.tar.gz
+
+# Custom build artifacts
+*.d
