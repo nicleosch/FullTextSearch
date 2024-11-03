@@ -1,19 +1,18 @@
-#include "src/FullTextSearchEngine.hpp"
-#include "src/Document.hpp"
-#include "src/algorithms/VectorSpaceModelEngine/VectorSpaceModelEngine.hpp"
-#include "src/algorithms/InvertedIndexEngine/InvertedIndexEngine.hpp"
-#include "src/algorithms/TrigramIndexEngine/TrigramIndexEngine.hpp"
-#include "src/algorithms/DummySearchEngine/DummySearchEngine.hpp"
 #include <iostream>
 
-int main() {
-    // Load documents from data directory
-    std::vector<Document> documents;
+#include "src/FullTextSearchEngine.hpp"
+#include "src/algorithms/DummySearch/DummySearchEngine.hpp"
+#include "src/algorithms/InvertedIndex/InvertedIndexEngine.hpp"
+#include "src/algorithms/TrigramIndex/TrigramIndexEngine.hpp"
+#include "src/algorithms/VectorSpaceModel/VectorSpaceModelEngine.hpp"
+#include "src/dataUtils/Document.hpp"
+#include "src/dataUtils/DocumentUtils.hpp"
 
+int main() {
     // Choose search engine algorithm
     FullTextSearchEngine* engine = nullptr;
     std::string algorithmChoice;
-    std::cout << "Select search algorithm (vsm/inverted/trigram): ";
+    std::cout << "Select search algorithm (vsm/inverted/trigram/dummy): ";
     std::cin >> algorithmChoice;
 
     if (algorithmChoice == "vsm") {
@@ -22,10 +21,20 @@ int main() {
         engine = new InvertedIndexEngine();
     } else if (algorithmChoice == "trigram") {
         engine = new TrigramIndexEngine();
-    }     else if (algorithmChoice == "dummy") {
+    } else if (algorithmChoice == "dummy") {
         engine = new DummySearchEngine();
     } else {
         std::cerr << "Invalid choice!" << std::endl;
+        return 1;
+    }
+    std::string directoryPath;
+    std::cout << "Enter search directory absolute path: ";
+    std::cin >> directoryPath;
+
+    std::vector<Document> documents = loadDocuments(directoryPath);
+
+    if (documents.empty()) {
+        std::cerr << "No documents to index. Exiting..." << std::endl;
         return 1;
     }
 

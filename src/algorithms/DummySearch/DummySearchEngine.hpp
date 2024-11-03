@@ -1,18 +1,19 @@
 //
-// Created by dhia on 10/31/24.
+// Created by fts on 10/31/24.
 //
 
-#ifndef TRIGRAMINDEXENGINE_HPP
-#define TRIGRAMINDEXENGINE_HPP
+#ifndef DUMMYSEARCHENGINE_HPP
+#define DUMMYSEARCHENGINE_HPP
 
 #include "../../FullTextSearchEngine.hpp"
 
-class TrigramIndexEngine : public FullTextSearchEngine {
+class DummySearchEngine : public FullTextSearchEngine {
    public:
     void indexDocuments(const std::vector<Document>& documents) override;
+
     std::vector<Document> search(const std::string& query) override;
 
    private:
 };
 
-#endif  // TRIGRAMINDEXENGINE_HPP
+#endif  // DUMMYSEARCHENGINE_HPP
