@@ -9,17 +9,17 @@
 #include <vector>
 
 #include "dataUtils/Document.hpp"
+#include "dataUtils/DocumentIterator.hpp"
 
 class FullTextSearchEngine {
-   public:
-    virtual void indexDocuments(const std::vector<Document>& documents) = 0;
+public:
+    virtual void indexDocuments(DocumentIterator it) = 0;
 
-    virtual std::vector<Document> search(const std::string& query) = 0;
+    virtual std::vector<std::shared_ptr<Document> > search(const std::string &query) = 0;
 
     virtual ~FullTextSearchEngine() = default;
 
-   protected:
-    std::vector<Document> documents;
+protected:
 };
 
 #endif  // FULLTEXTSEARCHENGINE_HPP

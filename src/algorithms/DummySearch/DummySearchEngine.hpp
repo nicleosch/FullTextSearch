@@ -8,12 +8,13 @@
 #include "../../FullTextSearchEngine.hpp"
 
 class DummySearchEngine : public FullTextSearchEngine {
-   public:
-    void indexDocuments(const std::vector<Document>& documents) override;
+public:
+    void indexDocuments(DocumentIterator it) override;
 
-    std::vector<Document> search(const std::string& query) override;
+    std::vector<std::shared_ptr<Document> > search(const std::string &query) override;
 
-   private:
+private:
+    std::vector<std::shared_ptr<Document> > documents;
 };
 
 #endif  // DUMMYSEARCHENGINE_HPP

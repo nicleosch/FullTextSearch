@@ -8,12 +8,13 @@
 #include "../../FullTextSearchEngine.hpp"
 
 class InvertedIndexEngine : public FullTextSearchEngine {
-   public:
-    void indexDocuments(const std::vector<Document>& documents) override;
+public:
+    void indexDocuments(DocumentIterator it) override;
 
-    std::vector<Document> search(const std::string& query) override;
+    std::vector<std::shared_ptr<Document> > search(const std::string &query) override;
 
-   private:
+private:
 };
 
 #endif  // INVERTEDINDEXENGINE_HPP
+

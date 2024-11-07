@@ -1,22 +1,25 @@
-// Document.hpp
 // Created by fts on 10/31/24.
 
 #ifndef DOCUMENT_HPP
 #define DOCUMENT_HPP
-
-#include <string>
+#include <parquet/arrow/reader.h>
+#include <arrow/io/file.h>
 
 class Document {
-   public:
-    Document(int id, const std::string& content);
+public:
+    Document(int id, const char *data, size_t size, const std::shared_ptr<arrow::Buffer> &arrowBuf);
 
     [[nodiscard]] int getId() const { return id; }
 
-    [[nodiscard]] std::string getContent() const { return content; }
+    [[nodiscard]] const char *getBegin() const { return beginPointer; }
 
-   private:
+    [[nodiscard]] size_t getSize() const { return size; }
+
+private:
     int id;
-    std::string content;
+    const char *beginPointer;
+    const size_t size;
+    const std::shared_ptr<arrow::Buffer> &arrowBuf;
 };
 
 #endif  // DOCUMENT_HPP
