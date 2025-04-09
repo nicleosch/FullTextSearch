@@ -1,7 +1,7 @@
 
 #include "stemmingtokenizer.hpp"
 
-#include "snowball/api.h"
+#include "snowball/src/api.h"
 #include "tokenizer_rules.hpp"
 namespace tokenizer {
 

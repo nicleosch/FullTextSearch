@@ -34,9 +34,9 @@ set(FTS_HEADERS
         src/algorithms/trigram/models/trigram.hpp
         src/algorithms/trigram/parser/trigram_parser.hpp
         src/algorithms/vsm/vector_space_model_engine.hpp
-        src/tokenizer/snowball/api.h
-        src/tokenizer/snowball/header.h
-        src/tokenizer/snowball/stem_UTF_8_english.h
+        src/tokenizer/snowball/src/api.h
+        src/tokenizer/snowball/src/header.h
+        src/tokenizer/snowball/src/stem_UTF_8_english.h
         src/tokenizer/stemmingtokenizer.hpp
         src/tokenizer/ITokenizer.hpp
         src/tokenizer/simpletokenizer.hpp
@@ -53,9 +53,9 @@ set(FTS_SOURCES
         src/algorithms/trigram/trigram_index_engine.cpp
         src/algorithms/trigram/parser/trigram_parser.cpp
         src/algorithms/vsm/vector_space_model_engine.cpp
-        src/tokenizer/snowball/api.c
-        src/tokenizer/snowball/utilities.c
-        src/tokenizer/snowball/stem_UTF_8_english.c
+        src/tokenizer/snowball/src/api.c
+        src/tokenizer/snowball/src/utilities.c
+        src/tokenizer/snowball/src/stem_UTF_8_english.c
         src/tokenizer/stemmingtokenizer.cpp
         src/tokenizer/simpletokenizer.cpp
         src/bootstrap/cli.cpp
